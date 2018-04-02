@@ -1200,7 +1200,7 @@ input[type="button"]:focus {
   background-color: #d8d1c9;
   border: 4px solid transparent;
   color: #FFFFFF;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   margin: 5px auto;
   overflow: hidden;
   transition: all 0.2s;

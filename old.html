@@ -3,54 +3,27 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<link rel="apple-touch-icon" sizes="76x76" href="http://partners.cabby.ng/partner_css/signup/assets/img/apple-icon.png" />
-<!-- 	<link rel="icon" type="image/png" href="http://partners.cabby.ng/partner_css/signup/assets/img/favicon.png" /> -->
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.png" />
 	<title>Cabby Partner</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
 	<!-- CSS Files -->
-    <link href="http://partners.cabby.ng/partner_css/signup/assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="http://partners.cabby.ng/partner_css/signup/assets/css/cabby.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/cabby.css" rel="stylesheet" />
 
-	<link href="http://partners.cabby.ng/partner_css/signup/assets/css/cabby1.css" rel="stylesheet" />
+	<link href="assets/css/cabby1.css" rel="stylesheet" />
 
 	<!-- Fonts and Icons -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 	<link href="assets/css/icons.css" rel="stylesheet">
-	<script>
-			function getId(val){
-		 $.ajax({
-				type: "POST",
-				url: "<?php echo base_url();?>index.php/Welcome/car_make",
-				data: "car_type_id="+val,
-				success: 
-				function(data){
-				 
-				$('#car_make_id').html(data);
-				}
-			});
-		} 
-		function getId2(val){
-
-		 $.ajax({
-				type: "POST",
-				url: "<?php echo base_url();?>index.php/Welcome/car_model",
-				data: "car_make_id="+val,
-				success: 
-				function(data){
-				$('#car_model_id').html(data);
-				}
-			});
-		} 
-		  
-		</script> 
 </head>
 
 <body>
-	<div class="image-container set-full-height" style="background-image: url('http://partners.cabby.ng/partner_css/signup/assets/img/driver.JPG')">
+	<div class="image-container set-full-height" style="background-image: url('assets/img/driver.JPG')">
 	    <!--   Cabby  -->
 	    <a href="#">
 	         <div class="logo-container">
@@ -72,14 +45,14 @@
 		            <div class="wizard-container">
 
 		                <div class="card wizard-card" data-color="green" id="wizardProfile">
-		                    <form  action="<?php echo base_url();?>index.php/Useraccounts/driver_signup"  id="msform" name="msform" enctype="multipart/form-data"  method="post">
+		                    <form action="" method="">
 		                <!--        You can switch " data-color="o          -->
 
 		                    	<div class="wizard-header text-center">
 		                        	<h3 class="wizard-title">CABBY needs partners like you</h3>
 								</div>
 
-							<div class="wizard-navigation">
+								<div class="wizard-navigation">
 									<div class="progress-with-circle">
 									     <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" style="width: 21%;"></div>
 									</div>
@@ -97,11 +70,11 @@
 												<div class="icon-circle">
 													<i class="ti-settings"></i>
 												</div>
-												BANK DETIALS
+												DOCUMENT
 											</a>
 										</li>
 			                            <li>
-											<a href="#bank" data-toggle="tab">
+											<a href="#otp" data-toggle="tab">
 												<div class="icon-circle">
 													<i class="ti-map"></i>
 												</div>
@@ -109,17 +82,17 @@
 											</a>
 										</li>
 										<li>
-											<a href="documents" data-toggle="tab">
+											<a href="#address" data-toggle="tab">
 												<div class="icon-circle">
 													<i class="ti-map"></i>
 												</div>
-												DOCUMENTS
+												BANK DETAILS
 											</a>
 										</li>
 			                        </ul>
 								</div>
-		                         <div class="tab-content">
-		                            <div class="active" id="details">
+		                        <div class="tab-content">
+		                            <div class="tab-pane" id="details">
 		                            	<div class="row">
 											<h4 class="info-text"> PERSONAL INFORMATION AND CAR DETAILS</h4>
 											<h5 class="info-text"> Only your first name and car details are visible to clients during the booking</h5>
@@ -127,11 +100,11 @@
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>First Name <small>(required)</small></label>
-													<input name="fname" name="fname" type="text" class="form-control" placeholder="Andrew...">
+													<input name="firstname" type="text" class="form-control" placeholder="Andrew...">
 												</div>
 													<label>Last Name <small>(required)</small></label>
 												<div class="form-group">
-													<input name="lname" name="lname"type="text" class="form-control" placeholder="Smith...">
+													<input name="lastname" type="text" class="form-control" placeholder="Smith...">
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
@@ -144,89 +117,83 @@
 											 <div class="col-sm-10 col-sm-offset-1">
 		                                        <div class="form-group">
 		                                            <label>Car Type</label><br>
-		                                            <select name="car_type_id" id="car_type_id"  class="form-control">
-		                                                <option value=""> Car Type</option>
-																                                            
+		                                            <select name="country" class="form-control">
+		                                                <option value="Afghanistan"> CabbyX</option>
+		                                            
 		                                            </select>
 		                                        </div>
 		                                    </div>
-											<!-- <div class="col-sm-10 col-sm-offset-1">
+											<div class="col-sm-10 col-sm-offset-1">
 		                                        <div class="form-group">
 		                                            <label>Car Manufacturer</label><br>
-		                                            <select  name="car_make_id" id="car_make_id" class="form-control">
-		                                                <option value=""> Car Manufacturer </option>
-		                                             
+		                                            <select name="country" class="form-control">
+		                                                <option value="Afghanistan"> Toyota </option>
+		                                               <option value="Albania"> Corrolla </option>
 		                                              
 		                                            </select>
 		                                        </div>
-		                                    </div> -->
-											<!-- <div class="col-sm-10 col-sm-offset-1">
-		                                        <div class="form-group">
-		                                            <label>Car Model <small>(required)</small></label>
-		                                                <select name="car_model_id" 
-														class="form-control">
-																<option value="">Choose a Car Model</option>   
-															</select> 	
-		                                        </div>
-		                                    </div> -->
-											
+		                                    </div>
 											
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
+													<label>Car Model <small>(required)</small></label>
+													<input name="text" type="text" class="form-control" placeholder="hello">
+												</div>
+											</div>
+											<div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
 													<label>Liscence Plate <small>(required)</small></label>
-													<input  id="carnumber" name="carnumber"type="text" class="form-control" placeholder="cabby123">
+													<input name="text" type="text" class="form-control" placeholder="hello">
 												</div>
 											</div>
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>Password <small>(required)</small></label>
-													<input type="password"type="password" id="pass" name="pass" placeholder="Password" class="form-control" >
+													<input name="text" type="text" class="form-control" placeholder="hello">
 												</div>
 											</div>
-											<!-- <div class="col-sm-10 col-sm-offset-1">
+											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
 													<label>Confirm Password<small>(required)</small></label>
-													<input type="password" id="pass1" name="pass1" placeholder="Confirm Password" class="form-control" >
+													<input name="text" type="text" class="form-control" placeholder="hello">
 												</div>
-											</div> -->
+											</div>
 											
 										</div>
 		                            </div>
-		                            <div class="tab-pane" id="bank">
-		                                <h5 class="info-text"> BANK DETAILS </h5>
+		                            <div class="tab-pane" id="document">
+		                                <h5 class="info-text"> DOCUMENTS UPLOADS </h5>
+		                                <div class="row">
+		                                  <div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
+													<label>Confirm Password<small>(required)</small></label>
+													<input name="text" type="text" class="form-control" placeholder="hello">
+												</div>
+											</div>
+
+
+										  </div>
+		                            </div>
+		                            <div class="tab-pane" id="otp">
 		                                <div class="row">
 											<div class="col-sm-10 col-sm-offset-1">
 												<div class="form-group">
-													<label>Bank Name<small>*</small></label>
-													<input  id="bank_name" name="bank_name" placeholder="Bank Name" class="form-control" >
+													<label>Confirm Password<small>(required)</small></label>
+													<input name="text" type="text" class="form-control" placeholder="hello">
 												</div>
 											</div>
-											<div class="col-sm-10 col-sm-offset-1">
-												<div class="form-group">
-													<label>Account Name<small>(required)</small></label>
-													<input  type="text" class="form-control" id="account_name" name="account_name" placeholder="Account Name">
-												</div>
-											</div>
-											<div class="col-sm-10 col-sm-offset-1">
-												<div class="form-group">
-													<label>Account Number<small>(required)</small></label>
-													<input type="text" class="form-control" id="account_number" name="account_number" placeholder="Account Number">
-												</div>
-											</div>
-
-
-										 </div>
+		                                </div>
 		                            </div>
-		                       </div>
+		                        </div>
 		                        <div class="wizard-footer">
 		                            <div class="pull-right">
 		                                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Next' />
-		                               
+		                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Finish' />
 		                            </div>
 
-		                          <!--   <div class="pull-left">
+		                            <div class="pull-left">
 		                                <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />
-		                            </div> -->
+		                            </div>
 		                            <div class="clearfix"></div>
 		                        </div>
 		                    </form>
@@ -242,14 +209,14 @@
 </body>
 
 	<!--   Core JS Files   -->
-	
-	<!--   Core JS Files   -->
-	<script src="http://partners.cabby.ng/partner_css/signup/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-	<script src="http://partners.cabby.ng/partner_css/signup/assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="http://partners.cabby.ng/partner_css/signup/assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
-	<script  src="http://partners.cabby.ng/partner_css/signup/assets/js/jquery.validate.min.js" type="text/javascript"></script>
-	<script src ="http://partners.cabby.ng/partner_css/signup/assets/js/cabbyregistration.js" type="text/javascript"></script> 
-	
+	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
 
-	
+	<!--  Plugin for the Wizard -->
+	<script src="assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
+
+	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+	<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
+
 </html>

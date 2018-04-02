@@ -1,0 +1,199 @@
+
+<!DOCTYPE>
+    
+<html lang="en">
+<!--  ooooooooooooo             oooo            ooooooooooo           ooooooooooo           oooooo       oooooo
+     oooooooooooooooo          ooooooo          ooooooooooooooo       ooooooooooooooo        oooooo     oooooo
+    oooooooooooooooooo       ooooooooooo        ooooooo      oooooo   ooooooo      oooooo     oooooo   oooooo
+    ooooooo       oooo      ooooo   ooooo       ooooooo      ooooooo  ooooooo      ooooooo     oooooo oooooo
+    ooooooo                ooooo     ooooo      oooooooooooooooooo    oooooooooooooooooo         ooooooooo
+    ooooooo               ooooo       ooooo     ooooooooooooooooooooo ooooooooooooooooooooo       ooooooo
+    ooooooo       oooo   ooooooooooooooooooo    ooooooo       ooooooo ooooooo       ooooooo        ooooo
+    oooooooooooooooooo  ooooooooooooooooooooo   ooooooo       ooooooo ooooooo       ooooooo        ooooo
+     oooooooooooooooo  ooooo             ooooo  ooooooo      oooooo   ooooooo      oooooo          ooooo
+      oooooooooooooo  ooooo               ooooo ooooooooooooooooo     ooooooooooooooooo            ooooo -->
+<head>
+    <title>Become a driver- Cabby</title>
+    <meta name="viewport" content="width= device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link href="http://partners.cabby.ng/partner_css/assets/css/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="http://partners.cabby.ng/partner_css/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="http://partners.cabby.ng/partner_css/https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+</head>
+<script> 
+function setId(val)
+{
+        $.ajax({
+            type: "POST",
+            url: "http://partners.cabby.ng/index.php/Booking_controller/get_codecountry",
+            data: "id="+val,
+            success:
+                function(data){
+                    $('#phonecode').val(data);
+                }
+        });
+}
+	
+	function limitKeypress(event, value, maxLength) {
+    if (value.toString().length >= maxLength) {
+        //event.preventDefault();
+    }
+}
+	
+</script>
+
+<body>
+    <div class="overall">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <a class="navbar-brand" href="#">CABBY</a>
+            <!-- <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+                <span class="navbar-toggler-icon" style="color: white"> </span>
+            </button> -->
+
+            <!-- <div class="collapse navbar-collapse " id="navbarSupportedContent "> -->
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item active ">
+                    <a href="# " class="login ">LOGIN</a>
+                </li>
+            </ul>
+            <!-- </div> -->
+        </nav><br><br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="">
+                        <div class="form d-block mx-auto">
+                            <h2><b>Apply Now</b></h2>
+                            <p style="color: gray">Enter your info, and then download the cabby app to create your driver profile.</p>
+                            <form name="myForm" action="http://partners.cabby.ng/index.php/Driver/registration" onsubmit="return validateForm()"enctype="multipart/form-data"  method="post" novalidate >
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input name="email" id="email" type="text"  class="form-control" placeholder="hello@cabby.ng">
+                                    <small id="emailHelp" class="form-text text-muted">This will be your username</small>
+                                </div>
+                                <div class="form-group">
+								<div class="col-md-2">
+								
+                                    <label for="exampleInputEmail1">Phone</label>
+                                    <input
+/									type="text" class="form-control" name="phonecode" id="phonecode" type="text" maxlength="10" readonly value="+243"  placeholder="+24300000000009">
+                               </div>
+							   <div class="col-md-4">
+							   <label for="exampleInputEmail1">Phone</label>
+                                    <input type="text" class="form-control" name="mob"  id="mob" placeholder="+234800000000">
+							   </div>
+							   </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">City</label>
+                                    <!-- <input type="text" class="form-control" id="text" placeholder="Choose a city"> -->
+									<select name="city_id" id="city_id"  class="form-control newsignup">
+										 <option value="">-------- <?php echo $this->lang->line('selectcity');?> --------</option>
+										 <?php foreach($city as $model){ ?>
+										<option value="<?php echo $model['city_id'];?>"><?php echo $model['city_name'];?></option>         
+										<?php } ?>
+									 </select>
+									
+                                </div>
+                                <button class="btn btn-driver" type="submit"> BECOME A DRIVER</button><br><br>
+                                <p>Already applied? <a class="check" href="#">Check the status of your application here.</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="text-center"><br><br><br><br><br>
+                <h3>What is Cabby?</h3>
+				<p>Whether you're trying to offset costs of your car, cover this month's bills, or fund your dreams, Cabby will lift you there. So, go ahead. Be your own boss.</p>
+                <p>Cabby matches drivers with passengers who request rides through our smartphone app, and passengers pay automatically through the app.</p>
+                <br><br><br>
+                <h3>Why Cabby?</h3><br>
+                <div class="containier">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12 text-center">
+                            <img src="https://cdn.lyft.com/brochure/drive-for-lyft-tip.f57a8a46.svg" height="70" width="70"><br><br>
+                            <b>Keep Your Tips</b><br>
+                            <p>Earn tips from your passengers and keep the whole amount- they're yours.</p>
+                        </div>
+                        <div class="col-md-4 col-xs-12">
+                            <img src="https://cdn.lyft.com/brochure/drive-for-lyft-pay.e79d86e9.svg" height="70" width="70"><br><br>
+                            <b>Make More Money</b><br>
+                            <p>With increased Prime Time pricing during peak hours, you make more with Cabby.</p>
+                        </div>
+                        <div class="col-md-4 col-xs-12">
+                            <img src="https://cdn.lyft.com/brochure/drive-for-lyft-community.b6331fb1.svg" height="70" width="70"><br><br>
+                            <b>Best Community</b><br>
+                            <p>The Cabby community is full of awesome, friendly people — passengers and drivers alike.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><br><br><br><br>
+    </div>
+    <div class="passengers_review">
+        <div class="container">
+            <div class="text-center"><br><br>
+                <h2>Passengers Ratings</h2>
+                <hr><br><br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://cdn.lyft.com/brochure/drive-for-lyft-five-stars.1914fa1c.svg" height="120" width="120">
+                        </div>
+                        <div class="col-md-6">
+                            <p>Drivers rate passengers after each ride, so you’ve always got a say. We also require passengers to provide valid credit card information for identity verification purposes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br>
+    </div>
+    <div class="last"><br><br>
+        <div class="container">
+            <div class="FAQ"><br>
+                <h2 class="text-center"><b>Frequently Asked Questions</b></h2><br>
+                <div class="text-left">
+                    <b>I already have a job, so can I just drive a few hours when i am free?</b>
+                    <p>Absolutely. You choose when you drive. Some drivers make more than N50,000 just driving Friday nights and weekends.</p>
+                    <b>How do I get paid?</b>
+                    <p>Drivers get paid for every trip on a per minute and mile basis. Money is deposited into your account each week automatically.</p>
+                    <br><br>
+                    <div class="text-center">
+                        <a href="#" class="check">See more common asked questions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br><br>
+    <div class="text-center">
+        <button class="btn btn-driver" style="width: auto; padding: 10px; border-radius: 5px">Apply Now</button>
+    </div><br><br><br><br><br>
+
+
+
+    <!-- <script src=""></script>
+    <script src="assets/js/bootstrap/bootstrap.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 50) {
+                    $(".fixed-top").css("background-color", "#000");
+                } else {
+                    $(".fixed-top").css("background-color", "transparent");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

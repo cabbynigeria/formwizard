@@ -30,23 +30,19 @@ transparent = true;
         		      required: true,
         		      minlength: 3
         		    },
-        		    lastname: {
+        		    lname: {
         		      required: true,
         		      minlength: 3
         		    },
-					pass: {
+					cartype_id: {
         		      required: true
-        		     
+        		    
         		    },
-					pass1: {
-        		      required: true,
-					   equalTo: "#pass"
-        		     
+					car_make_id: {
+        		      required: true
         		    },
-					
 					car_model_id: {
-        		      required: true,
-					  minlength: 3
+        		      required: true
         		      
         		    },
 					carnumber: {
@@ -61,15 +57,35 @@ transparent = true;
         		      required: true
         		     
         		    },
+					email: {
+        		      required: true
+        		     
+        		    },
+					mob: {
+        		      required: true,
+					  maxlength: 10
+        		     
+        		    },
+					
 					
 					account_number: {
         		      required: true
+        		     
+        		    },
+					pass: {
+        		      required: true
+        		     
+        		    },
+					pass1: {
+        		      required: true,
+					   equalTo: "#pass"
         		     
         		    },
         		    email: {
         		      required: true
         		    }
                 },
+				
         	});
 
             // Wizard Initialization
